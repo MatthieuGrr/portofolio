@@ -9,10 +9,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .project-hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background:
+                linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(124, 58, 237, 0.85)),
+                url('images/marianne/winners-cropped_optimized.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             padding: 8rem 0 4rem;
             text-align: center;
             color: white;
+            position: relative;
+        }
+
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        .project-hero > * {
+            position: relative;
+            z-index: 1;
         }
 
         .project-hero h1 {
@@ -195,6 +217,60 @@
             padding: 3rem 1rem;
             text-align: center;
             color: var(--text-secondary);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1.5rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .caption {
+            transform: translateY(0);
+        }
+
+        .gallery-item .caption h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .gallery-item .caption p {
+            margin: 0;
+            font-size: 0.85rem;
+            opacity: 0.9;
         }
 
         .specs-grid {
@@ -627,29 +703,37 @@
             </div>
         </section>
 
-        <!-- Photo Gallery Placeholder -->
+        <!-- Photo Gallery -->
         <section class="project-section">
             <h2><i class="fas fa-images"></i> Galerie photo</h2>
             <div class="image-gallery">
-                <div class="image-placeholder">
-                    <i class="fas fa-robot" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-color);"></i>
-                    <p>Robot Marianne</p>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Vue d'ensemble du UGV</p>
+                <div class="gallery-item">
+                    <img src="images/marianne/winners-cropped_optimized.jpg" alt="Victoire Makeathon ARES 2025">
+                    <div class="caption">
+                        <h4>🏆 Victoire - 1ère place</h4>
+                        <p>European Defence Innovation Days - Cracovie, Pologne</p>
+                    </div>
                 </div>
-                <div class="image-placeholder">
-                    <i class="fas fa-microchip" style="font-size: 3rem; margin-bottom: 1rem; color: var(--secondary-color);"></i>
-                    <p>PCB Loader</p>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">ESP32 + DRV8825 + CAN</p>
+                <div class="gallery-item">
+                    <img src="images/marianne/IMG_2226_optimized.jpg" alt="Robot Marianne - Vue complète">
+                    <div class="caption">
+                        <h4>Robot Marianne</h4>
+                        <p>UGV 48kg - Architecture complète avec bras robotique</p>
+                    </div>
                 </div>
-                <div class="image-placeholder">
-                    <i class="fas fa-box-open" style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent-color);"></i>
-                    <p>Système 4 tiroirs</p>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Distribution automatique</p>
+                <div class="gallery-item">
+                    <img src="images/marianne/IMG_2270_optimized.jpg" alt="Badge Competition Winner ARES">
+                    <div class="caption">
+                        <h4>Badge "Competition Winner"</h4>
+                        <p>ARES Makeathon - European Defence Agency</p>
+                    </div>
                 </div>
-                <div class="image-placeholder">
-                    <i class="fas fa-trophy" style="font-size: 3rem; margin-bottom: 1rem; color: #FFD700;"></i>
-                    <p>Victoire</p>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">1ère place - Cracovie</p>
+                <div class="gallery-item">
+                    <img src="images/marianne/IMG_20250514_094913_optimized.jpg" alt="Vue de dessus - Composants du robot">
+                    <div class="caption">
+                        <h4>Vue d'ensemble</h4>
+                        <p>Système de loader, moteurs et électronique embarquée</p>
+                    </div>
                 </div>
             </div>
         </section>
