@@ -298,6 +298,8 @@
             object-fit: contain;
             border-radius: 8px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            cursor: default;
+            pointer-events: none;
         }
 
         .lightbox-close {
@@ -312,6 +314,7 @@
             padding: 0;
             line-height: 1;
             transition: transform 0.2s ease;
+            z-index: 10000;
         }
 
         .lightbox-close:hover {
@@ -852,10 +855,12 @@
         galleryItems.forEach(img => {
             img.addEventListener('click', (e) => {
                 e.stopPropagation();
+                console.log('Image clicked:', img.src);
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
                 lightbox.classList.add('active');
                 document.body.style.overflow = 'hidden';
+                console.log('Lightbox image src:', lightboxImg.src);
             });
         });
 
