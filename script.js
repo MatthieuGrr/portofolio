@@ -121,7 +121,7 @@ function displayProjects(projects) {
     }
 
     projectsGrid.innerHTML = projects.map(project => `
-        <article class="project-card" data-category="${project.category}">
+        <article class="project-card" data-category="${project.category}" ${project.link ? `data-link="${project.link}"` : ''}>
             <div class="project-image">
                 ${project.image ?
                     `<img src="${project.image}" alt="${project.title}">` :
@@ -151,6 +151,23 @@ function displayProjects(projects) {
             </div>
         </article>
     `).join('');
+
+    // Ajouter les gestionnaires de clic sur les cartes de projet
+    document.querySelectorAll('.project-card[data-link]').forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Empêcher la double navigation si on clique sur le lien
+            if (e.target.closest('.project-link')) return;
+
+            const link = card.getAttribute('data-link');
+            if (link) {
+                if (link.startsWith('http')) {
+                    window.open(link, '_blank');
+                } else {
+                    window.location.href = link;
+                }
+            }
+        });
+    });
 }
 
 // Filtrer les projets

@@ -134,11 +134,19 @@ button {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    outline: none;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--primary-color);
+}
+
+.nav-link:focus-visible {
+    color: var(--primary-color);
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 .nav-link::after {
@@ -153,7 +161,8 @@ button {
 }
 
 .nav-link:hover::after,
-.nav-link.active::after {
+.nav-link.active::after,
+.nav-link:focus-visible::after {
     width: 100%;
 }
 
@@ -266,6 +275,12 @@ button {
     align-items: center;
     gap: 0.5rem;
     transition: var(--transition);
+    outline: none;
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .btn-primary {
@@ -427,12 +442,18 @@ section {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    outline: none;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
+}
+
+.filter-btn:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .projects-grid {
@@ -451,9 +472,18 @@ section {
     flex-direction: column;
 }
 
+.project-card[data-link] {
+    cursor: pointer;
+}
+
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+}
+
+.project-card:focus-within {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .project-image {
@@ -633,27 +663,43 @@ section {
     transition: var(--transition);
 }
 
+.contact-item.contact-link {
+    cursor: pointer;
+    outline: none;
+}
+
 .contact-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
 
+.contact-item:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
 .contact-item i {
     font-size: 2rem;
     color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.contact-item:hover i {
+    transform: scale(1.1);
 }
 
 .contact-item h3 {
     font-size: 1.125rem;
     margin-bottom: 0.25rem;
+    color: var(--text-color);
 }
 
-.contact-item a {
+.contact-value {
     color: var(--text-secondary);
     transition: var(--transition);
 }
 
-.contact-item a:hover {
+.contact-item:hover .contact-value {
     color: var(--primary-color);
 }
 
