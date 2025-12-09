@@ -5,7 +5,7 @@
         "date": "Mai 2025",
         "description": "🏆 Victoire au premier Makeathon ARES organisé par l'Agence européenne de défense à Cracovie. Robot UGV de 48kg pour missions logistiques, reconnaissance et NBC. Architecture complète : PCB custom ESP32 + bus CAN, plugin ROS2, système de chargement automatique à 4 tiroirs, bras Piper AgileX, vision IA (ZED 2i + Jetson), GNSS RTK, 4 moteurs brushless 1000W. Équipe French Touch.",
         "technologies": ["ESP32", "ROS2", "CAN Bus", "PCB Design", "ELRS", "Jetson Nano", "GNSS RTK", "KiCad"],
-        "image": "",
+        "image": "images/marianne/winners-cropped_optimized.jpg",
         "link": "marianne-makeathon.html"
     }
 ]

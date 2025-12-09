@@ -118,10 +118,21 @@ button {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.nav-logo:hover {
     color: var(--primary-color);
+}
+
+.logo-name {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-menu {
@@ -234,25 +245,11 @@ button {
     z-index: 1;
 }
 
-.hero-greeting {
-    font-size: 1.125rem;
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
     color: var(--text-color);
 }
 
@@ -784,11 +781,7 @@ section {
     }
 
     .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 2rem;
     }
 
     .hero-description {
@@ -818,11 +811,7 @@ section {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
 
     .btn {
