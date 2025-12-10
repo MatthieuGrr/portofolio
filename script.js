@@ -1,4 +1,68 @@
 // ==========================================
+// Typing Effect for Hero Title
+// ==========================================
+const texts = [
+    { text: "Explorateur de ", highlight: "Technologies" },
+    { text: "Créateur de ", highlight: "Projets" },
+    { text: "Chercheur d'", highlight: "Idées ingénieuses" }
+];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 100;
+
+function typeText() {
+    const typedTextElement = document.getElementById('typed-text');
+    if (!typedTextElement) return;
+
+    const currentItem = texts[textIndex];
+    const fullText = currentItem.text + currentItem.highlight + "_";
+    const highlightStart = currentItem.text.length;
+    const highlightEnd = highlightStart + currentItem.highlight.length;
+
+    if (isDeleting) {
+        const visibleText = fullText.substring(0, charIndex - 1);
+        updateTextWithGradient(visibleText, highlightStart, highlightEnd);
+        charIndex--;
+        typingSpeed = 50;
+    } else {
+        const visibleText = fullText.substring(0, charIndex + 1);
+        updateTextWithGradient(visibleText, highlightStart, highlightEnd);
+        charIndex++;
+        typingSpeed = 100;
+    }
+
+    if (!isDeleting && charIndex === fullText.length) {
+        isDeleting = true;
+        typingSpeed = 2000; // Pause avant de supprimer
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        typingSpeed = 500; // Pause avant le prochain texte
+    }
+
+    setTimeout(typeText, typingSpeed);
+}
+
+function updateTextWithGradient(text, highlightStart, highlightEnd) {
+    const typedTextElement = document.getElementById('typed-text');
+    const beforeHighlight = text.substring(0, highlightStart);
+    const highlighted = text.substring(highlightStart, Math.min(text.length, highlightEnd));
+    const afterHighlight = text.substring(highlightEnd);
+
+    if (text.length <= highlightStart) {
+        typedTextElement.innerHTML = text;
+    } else if (text.length <= highlightEnd) {
+        typedTextElement.innerHTML = beforeHighlight + '<span class="gradient-text">' + highlighted + '</span>';
+    } else {
+        typedTextElement.innerHTML = beforeHighlight + '<span class="gradient-text">' + highlighted + '</span>' + afterHighlight;
+    }
+}
+
+// Démarrer l'effet de typing au chargement de la page
+document.addEventListener('DOMContentLoaded', typeText);
+
+// ==========================================
 // Theme Toggle
 // ==========================================
 const themeToggle = document.getElementById('theme-toggle');

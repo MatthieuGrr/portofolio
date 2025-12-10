@@ -12,9 +12,6 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#accueil" class="nav-logo">
-                <span class="logo-name">Matthieu Geörger</span>
-            </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#accueil" class="nav-link">Accueil</a></li>
                 <li><a href="#apropos" class="nav-link">À propos</a></li>
@@ -38,9 +35,7 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Explorateur de <span class="gradient-text">Technologies</span>,
-                    créateur de <span class="gradient-text">Projets</span>
-                    & chercheur d' <span class="gradient-text">Idées ingénieuses</span>
+                    <span id="typed-text"></span><span class="cursor">|</span>
                 </h1>
                 <p class="hero-description">
                     Je conçois et développe des projets techniques et innovants,
@@ -56,11 +51,6 @@
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="floating-card">
-                    <img src="images/profil.jpeg" alt="Matthieu Geörger" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
-                </div>
-            </div>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
@@ -72,6 +62,9 @@
         <div class="container">
             <h2 class="section-title">À propos de moi</h2>
             <div class="about-content">
+                <div class="about-profile">
+                    <img src="images/profil.jpeg" alt="Matthieu Geörger" class="profile-image">
+                </div>
                 <div class="about-text">
                     <p class="about-paragraph">
                         Passionné depuis toujours par l’électronique et la robotique, 
@@ -107,6 +100,27 @@
                             <div>
                                 <h3>Robotique</h3>
                                 <p>Automatisation, capteurs, actionneurs</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-cube"></i>
+                            <div>
+                                <h3>CAO/FAO</h3>
+                                <p>Conception assistée par ordinateur</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-print"></i>
+                            <div>
+                                <h3>Impression 3D</h3>
+                                <p>Prototypage rapide, fabrication additive</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-cogs"></i>
+                            <div>
+                                <h3>CNC</h3>
+                                <p>Usinage numérique, fabrication soustractive</p>
                             </div>
                         </div>
                     </div>

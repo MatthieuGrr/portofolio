@@ -7,5 +7,14 @@
         "technologies": ["ESP32", "ROS2", "CAN Bus", "PCB Design", "ELRS", "Jetson Nano", "GNSS RTK", "KiCad"],
         "image": "images/marianne/winners-cropped_optimized.jpg",
         "link": "marianne-makeathon.html"
+    },
+    {
+        "title": "FIPATECH - Coupe de France de Robotique 2026",
+        "category": "robotique",
+        "date": "Mai 2026",
+        "description": "Participation à la Coupe de France de Robotique 2026 avec l'équipe FIPATECH de l'ENSTA. Thème \"Winter is Coming\" : conception d'un robot autonome jouant le rôle d'écureuils devant récupérer des noisettes volées par des humains et les dissimuler avant leur retour. Missions : collecter les noisettes dans les caisses, les transporter et les cacher dans un temps limité. Compétition finale du 13 au 16 mai 2026 à La Roche-sur-Yon.",
+        "technologies": ["Robotique autonome", "Vision par ordinateur", "Navigation", "Manipulation d'objets", "Stratégie temps réel"],
+        "image": "images/CDFR2026/Pasted image.png",
+        "link": "https://presentation.fipatech.fr/"
     }
 ]

@@ -8,6 +8,54 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* Navigation spécifique pour les pages de projet */
+        .nav-container {
+            justify-content: space-between !important;
+        }
+
+        .back-to-portfolio {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .back-to-portfolio:hover {
+            color: var(--primary-color);
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        body.dark-mode .back-to-portfolio:hover {
+            background-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .back-to-portfolio i {
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-portfolio:hover i {
+            transform: translateX(-5px);
+        }
+
+        /* Responsive pour le bouton retour */
+        @media (max-width: 480px) {
+            .back-to-portfolio span {
+                display: none;
+            }
+
+            .back-to-portfolio {
+                width: 40px;
+                height: 40px;
+                justify-content: center;
+                padding: 0;
+            }
+        }
+
         .project-hero {
             background:
                 linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(124, 58, 237, 0.85)),
@@ -360,22 +408,13 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-name">Matthieu Geörger</span>
+            <a href="index.html#projets" class="back-to-portfolio">
+                <i class="fas fa-arrow-left"></i>
+                <span>Retour au portfolio</span>
             </a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html#accueil" class="nav-link">Accueil</a></li>
-                <li><a href="index.html#apropos" class="nav-link">À propos</a></li>
-                <li><a href="index.html#projets" class="nav-link">Projets</a></li>
-                <li><a href="index.html#competences" class="nav-link">Compétences</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
             <div class="nav-icons">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                     <i class="fas fa-moon"></i>
-                </button>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
@@ -404,10 +443,6 @@
 
     <!-- Project Content -->
     <div class="project-content">
-        <a href="index.html#projets" class="back-link">
-            <i class="fas fa-arrow-left"></i> Retour aux projets
-        </a>
-
         <!-- Introduction -->
         <section class="project-section">
             <h2><i class="fas fa-trophy"></i> Le défi</h2>
@@ -739,9 +774,6 @@
             <div class="project-links">
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7330958733066280960/" class="project-btn" target="_blank">
                     <i class="fab fa-linkedin"></i> Article LinkedIn
-                </a>
-                <a href="index.html#projets" class="project-btn secondary">
-                    <i class="fas fa-arrow-left"></i> Retour aux projets
                 </a>
             </div>
         </section>
