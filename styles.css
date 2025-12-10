@@ -470,9 +470,12 @@ section {
 
 .profile-image {
     width: 100%;
+    height: auto;
     border-radius: 20px;
     box-shadow: var(--shadow-lg);
     transition: var(--transition);
+    object-fit: cover;
+    display: block;
 }
 
 .profile-image:hover {
