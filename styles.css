@@ -276,9 +276,35 @@ body.dark-mode .nav-toggle {
     z-index: 1;
 }
 
+.hero-name {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    animation: gradientShift 3s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .hero-title {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 700;
     line-height: 1.3;
     margin-bottom: 2rem;
     color: #ffffff;
@@ -834,15 +860,45 @@ section {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         flex-direction: column;
-        padding: 2rem;
-        gap: 0.5rem;
+        padding: 3rem 2rem;
+        gap: 0;
         transition: var(--transition);
         border-top: 1px solid rgba(0, 0, 0, 0.1);
+        justify-content: flex-start;
+        align-items: stretch;
     }
 
     body.dark-mode .nav-menu {
         background-color: rgba(15, 23, 42, 0.98);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu::before {
+        content: 'Matthieu Geörger';
+        display: block;
+        font-size: 1.75rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 2.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid var(--border-color);
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .nav-menu li {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-menu .nav-link {
+        display: block;
+        padding: 1.25rem 1.5rem;
+        font-size: 1.125rem;
+        text-align: center;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
     }
 
     .nav-menu.active {
@@ -873,8 +929,12 @@ section {
         order: 1;
     }
 
+    .hero-name {
+        font-size: 2.5rem;
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .hero-description {
@@ -911,12 +971,22 @@ section {
 }
 
 @media (max-width: 480px) {
+    .hero-name {
+        font-size: 2rem;
+    }
+
     .hero-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .nav-menu::before {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
     }
 }
